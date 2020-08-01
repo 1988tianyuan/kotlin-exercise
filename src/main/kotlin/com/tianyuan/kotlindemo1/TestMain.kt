@@ -35,8 +35,9 @@ fun main() {
     println("liugeng的长度是:${Greeter.getStringLength(liugeng)}")
 
     ArrayRangeTest.range()
+    ArrayRangeTest.arrayFuncs()
 
-
+    StringTest.test()
 }
 
 class Greeter(private val name: String) {
@@ -88,6 +89,22 @@ object ArrayRangeTest {
     }
 
     fun arrayFuncs() {
+        val array1 = arrayOf(1,2,3,4,5)
+        val array2 = Array(5) { i -> i * 2 }
+        array2.forEach { e -> print("$e,") }        // 0,2,4,6,8
+        println()
+    }
+}
 
+object StringTest {
+    fun test() {
+        val text = "liugeng"
+        text.forEach { s -> print("$s,") }
+        println()
+        val text2 = """
+            这是第一行
+            这是第二行
+        """.trimIndent()    // 删除多余的前后空格和换行
+        println(text2)
     }
 }
